@@ -1,0 +1,42 @@
+// Define the Java plugin for the project
+apply plugin: 'java'
+
+// Set the Java version compatibility
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// Define the project dependencies
+dependencies {
+    // Add any dependencies here if needed
+}
+
+// Define the project structure
+sourceSets {
+    main {
+        java {
+            // Set the directory for Java source files
+            srcDirs = ['src']
+        }
+    }
+}
+
+// Define the main class for the project
+mainClassName = 'Main.java'
+
+// Define the tasks
+tasks.withType(JavaCompile) {
+    // Set the Java compiler options
+    options.compilerArgs << '-Xlint:unchecked'
+}
+
+// Define the task for building a JAR file
+jar {
+    // Set the base name of the JAR file
+    baseName = 'LibManagementSystem'
+    // Include the main class in the manifest file
+    manifest {
+        attributes 'Main-Class': mainClassName
+    }
+    // Define the destination directory for the JAR file
+    destinationDir = file('build/libs')
+}
