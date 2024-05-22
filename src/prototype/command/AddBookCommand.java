@@ -5,8 +5,8 @@ import prototype.library.Library;
 import prototype.prompt.Prompter;
 
 public class AddBookCommand implements Command {
-    private Prompter prompter;
-    private Library library;
+    private final Prompter prompter;
+    private final Library library;
 
     public AddBookCommand(Prompter prompter, Library library) {
         this.prompter = prompter;

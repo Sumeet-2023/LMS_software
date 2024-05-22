@@ -2,6 +2,7 @@ package prototype.cli;
 
 import prototype.command.AddBookCommand;
 import prototype.command.Command;
+import prototype.command.DeleteBookCommand;
 import prototype.library.Library;
 import prototype.prompt.Prompter;
 
@@ -24,7 +25,7 @@ public class CLIRunner {
     private void initializeCommands() {
         commandMap = new HashMap<>();
         commandMap.put(1, new AddBookCommand(prompter, library));
-//        commandMap.put(2, new DeleteBookCommand(prompter));
+        commandMap.put(2, new DeleteBookCommand(prompter, library));
     }
 
     public void printOptions() {
