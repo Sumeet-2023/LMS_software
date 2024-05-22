@@ -1,16 +1,27 @@
 package prototype.cli;
 
-import prototype.command.ExecuteCommand;
+import prototype.command.AddBookCommand;
+import prototype.command.Command;
 import prototype.prompt.Prompter;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class CLIRunner {
     private Prompter prompter;
+    private Map<Integer, Command> commandMap;
 
     // Constructor
-    public CLIRunner() {
-        this.prompter = new Prompter();
+    public CLIRunner(Scanner scanner) {
+        this.prompter = new Prompter(scanner);
+        initializeCommands();
+    }
+
+    private void initializeCommands() {
+        commandMap = new HashMap<>();
+        commandMap.put(1, new AddBookCommand(prompter));
+//        commandMap.put(2, new DeleteBookCommand(prompter));
     }
 
     public void printOptions() {
@@ -29,11 +40,19 @@ public class CLIRunner {
     // Example usage
     public int run() {
         prompter.displayPrompt("->");
-        String input = prompter.getInput();
+        String input = prompter.getInput().trim();
         if (input.equals("9"))
             return (0);
-        if (!input.trim().isEmpty()) {
-            ExecuteCommand executeCommand = new ExecuteCommand(Integer.parseInt(input));
+        try {
+            int commandNumber = Integer.parseInt(input);
+            Command command = commandMap.get(commandNumber);
+            if (command != null) {
+                command.execute();
+            } else {
+                System.out.println("Invalid command number: " + commandNumber);
+            }
+        } catch (NumberFormatException e){
+            System.out.println("Please enter a valid number.");
         }
         return (1);
     }

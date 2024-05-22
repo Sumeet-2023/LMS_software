@@ -5,7 +5,8 @@ public class Prompter {
     private Scanner scanner;
 
     // Constructor
-    public Prompter() {
+    public Prompter(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     // Method to display a prompt
@@ -18,9 +19,6 @@ public class Prompter {
         return scanner.nextLine();
     }
 
-    public Scanner getScanner() {
-        return scanner;
-    }
 
     public void setScanner(Scanner scanner) {
         this.scanner = scanner;
