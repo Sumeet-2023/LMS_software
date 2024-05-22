@@ -44,8 +44,8 @@ public class Customer {
         return borrowedCopies;
     }
 
-    public void borrowCopy(BookCopy copy) {
-        borrowedCopies.add(copy);
+    public boolean borrowCopy(BookCopy copy) {
+       return borrowedCopies.add(copy);
     }
 
     public boolean returnCopy(int copyID) {
