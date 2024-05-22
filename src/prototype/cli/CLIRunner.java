@@ -26,6 +26,10 @@ public class CLIRunner {
         commandMap.put(2, new DeleteBookCommand(prompter, library));
         commandMap.put(3, new AddBookCopyCommand(prompter, library));
         commandMap.put(4, new DeleteBookCopyCommand(prompter, library));
+        commandMap.put(5, new AddCustomerCommand(prompter, library));
+        commandMap.put(6, new DeleteCustomerCommand(prompter, library));
+        commandMap.put(7, new BorrowBookCopyCommand(prompter, library));
+        commandMap.put(8, new ReturnBookCopyCommand(prompter, library));
     }
 
     public void printOptions() {

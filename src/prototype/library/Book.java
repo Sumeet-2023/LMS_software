@@ -68,4 +68,12 @@ public class Book {
     public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
+
+    public List<BookCopy> getCopies() {
+        return copies;
+    }
+
+    public void setCopies(List<BookCopy> copies) {
+        this.copies = copies;
+    }
 }
