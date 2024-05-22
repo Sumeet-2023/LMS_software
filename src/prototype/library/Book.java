@@ -25,6 +25,10 @@ public class Book {
     public void addCopy(BookCopy bookCopy) {
         copies.add(bookCopy);
     }
+
+    public boolean removeCopy(int id) {
+        return (copies.removeIf(bookCopy -> bookCopy.getId() == id));
+    }
     public String getTitle() {
         return title;
     }
