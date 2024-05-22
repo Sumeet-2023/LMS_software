@@ -12,8 +12,17 @@ public class Library {
         this.customers = new ArrayList<>();
     }
 
-    public void addBook(Book book) {
-        books.add(book);
+    public boolean addBook(Book book) {
+        if(book==null) {
+            return false;
+        }
+        for(Book b : books){
+            if(b.getISBN().equals(book.getISBN())){
+                return false;
+            }
+        }
+        return books.add(book);
+
     }
 
     public boolean deleteBookViaISBN(String ISBN) {
@@ -29,8 +38,17 @@ public class Library {
         return null;
     }
 
-    public void addCustomer(Customer customer) {
-        customers.add(customer);
+    public boolean addCustomer(Customer customer) {
+        if(customer==null){
+            return false;
+        }
+        for(Customer c:customers){
+            if(c.getCustomerId().equals(customer.getCustomerId())){
+                return false;
+
+            }
+        }
+        return customers.add(customer);
     }
 
     public boolean deleteCustomerViaId(String id) {
@@ -43,5 +61,13 @@ public class Library {
                     return customer;
         }
         return null;
+    }
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
     }
 }
