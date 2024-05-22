@@ -22,8 +22,8 @@ public class Book {
     }
 
 
-    public void addCopy(BookCopy bookCopy) {
-        copies.add(bookCopy);
+    public boolean addCopy(BookCopy bookCopy) {
+        return copies.add(bookCopy);
     }
 
     public boolean removeCopy(int id) {
