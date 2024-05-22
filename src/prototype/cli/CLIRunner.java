@@ -2,6 +2,7 @@ package prototype.cli;
 
 import prototype.command.AddBookCommand;
 import prototype.command.Command;
+import prototype.library.Library;
 import prototype.prompt.Prompter;
 
 import java.util.HashMap;
@@ -9,18 +10,20 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class CLIRunner {
-    private Prompter prompter;
+    private final Prompter prompter;
     private Map<Integer, Command> commandMap;
+    private Library library;
 
     // Constructor
-    public CLIRunner(Scanner scanner) {
+    public CLIRunner(Scanner scanner, Library library) {
         this.prompter = new Prompter(scanner);
+        this.library = library;
         initializeCommands();
     }
 
     private void initializeCommands() {
         commandMap = new HashMap<>();
-        commandMap.put(1, new AddBookCommand(prompter));
+        commandMap.put(1, new AddBookCommand(prompter, library));
 //        commandMap.put(2, new DeleteBookCommand(prompter));
     }
 
@@ -37,7 +40,6 @@ public class CLIRunner {
         System.out.println("9. Exit");
     }
 
-    // Example usage
     public int run() {
         prompter.displayPrompt("->");
         String input = prompter.getInput().trim();
@@ -56,14 +58,5 @@ public class CLIRunner {
         }
         return (1);
     }
-
-    public Prompter getPrompter() {
-        return prompter;
-    }
-
-    public void setPrompter(Prompter prompter) {
-        this.prompter = prompter;
-    }
-
 
 }
