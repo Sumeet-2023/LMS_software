@@ -1,11 +1,15 @@
 package prototype.library;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Book {
     private String title;
     private String author;
     private String genre;
     private String publisher;
     private String ISBN;
+    private List<BookCopy> copies;
 
     public Book(String title, String author, String genre, String publisher, String ISBN) {
         this.title = title;
@@ -13,8 +17,14 @@ public class Book {
         this.genre = genre;
         this.publisher = publisher;
         this.ISBN = ISBN;
+        this.copies = new ArrayList<>();
+        addCopy(new BookCopy(this));
     }
 
+
+    public void addCopy(BookCopy bookCopy) {
+        copies.add(bookCopy);
+    }
     public String getTitle() {
         return title;
     }
