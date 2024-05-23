@@ -1,7 +1,7 @@
-package command;
+package prototype.command;
 
-import library.Library;
-import prompt.Prompter;
+import prototype.library.Library;
+import prototype.prompt.Prompter;
 
 public class DeleteBookCommand implements Command {
     private final Prompter prompter;

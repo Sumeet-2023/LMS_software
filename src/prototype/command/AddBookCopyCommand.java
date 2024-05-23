@@ -1,9 +1,9 @@
-package command;
+package prototype.command;
 
-import library.Book;
-import library.BookCopy;
-import library.Library;
-import prompt.Prompter;
+import prototype.library.Book;
+import prototype.library.BookCopy;
+import prototype.library.Library;
+import prototype.prompt.Prompter;
 
 public class AddBookCopyCommand implements Command {
     private Prompter prompter;

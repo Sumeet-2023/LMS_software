@@ -1,4 +1,4 @@
-package library;
+package prototype.library;
 
 public class BookCopy {
     private static int idCounter = 1;

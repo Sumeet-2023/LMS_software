@@ -11,18 +11,12 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.easymock:easymock:5.2.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
-}
-
 sourceSets {
     main {
         java {
-            srcDir 'src/prototype'
+            srcDir 'src'
         }
     }
-
 }
 
 application {

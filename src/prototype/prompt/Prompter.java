@@ -1,4 +1,4 @@
-package prompt;
+package prototype.prompt;
 import java.util.Scanner;
 
 public class Prompter {
