@@ -1,5 +1,7 @@
-import cli.CLIRunner;
-import library.Library;
+package prototype;
+
+import prototype.cli.CLIRunner;
+import prototype.library.Library;
 
 import java.util.Scanner;
 

@@ -1,9 +1,9 @@
-package command;
+package prototype.command;
 
-import library.BookCopy;
-import library.Customer;
-import library.Library;
-import prompt.Prompter;
+import prototype.library.BookCopy;
+import prototype.library.Customer;
+import prototype.library.Library;
+import prototype.prompt.Prompter;
 
 public class ReturnBookCopyCommand implements Command {
     private Prompter prompter;
