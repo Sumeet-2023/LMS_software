@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: org.easymock:easymock:5.2.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.easymock" artifactId="easymock" version="5.2.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.easymock/easymock/5.2.0/ceb40330d6ecc2da3cdac41663f193e300497238/easymock-5.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.easymock/easymock/5.2.0/cd7a4d5c787485eb4701281873c4786bf6f1fe93/easymock-5.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
