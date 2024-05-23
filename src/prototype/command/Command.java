@@ -1,4 +1,4 @@
-package prototype.command;
+package command;
 
 public interface Command {
     void execute();

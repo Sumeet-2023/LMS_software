@@ -1,10 +1,6 @@
 package library;
 import org.junit.jupiter.api.Test;
 
-import prototype.library.Book;
-import prototype.library.Customer;
-import prototype.library.Library;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class LibraryTest {

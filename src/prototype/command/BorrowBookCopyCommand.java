@@ -1,10 +1,10 @@
-package prototype.command;
+package command;
 
-import prototype.library.Book;
-import prototype.library.BookCopy;
-import prototype.library.Customer;
-import prototype.library.Library;
-import prototype.prompt.Prompter;
+import library.Book;
+import library.BookCopy;
+import library.Customer;
+import library.Library;
+import prompt.Prompter;
 
 public class BorrowBookCopyCommand implements Command {
     private Prompter prompter;

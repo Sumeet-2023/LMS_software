@@ -1,8 +1,8 @@
-package prototype.command;
+package command;
 
-import prototype.library.Customer;
-import prototype.library.Library;
-import prototype.prompt.Prompter;
+import library.Customer;
+import library.Library;
+import prompt.Prompter;
 public class DeleteCustomerCommand implements Command {
     private Prompter prompter;
     private Library library;

@@ -1,8 +1,8 @@
-package prototype.cli;
+package cli;
 
-import prototype.command.*;
-import prototype.library.Library;
-import prototype.prompt.Prompter;
+import command.*;
+import library.Library;
+import prompt.Prompter;
 
 import java.util.HashMap;
 import java.util.Map;
