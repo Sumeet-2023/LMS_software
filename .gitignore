@@ -1,0 +1,30 @@
+# Build artifacts
+/build/
+.gradle/
+/**/build/
+
+# IDEA
+/.idea/
+/*.iml
+/modules.xml
+/production/
+/out/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temp files
+*.swp
+*.swo
+*~
+
+# Gradle wrapper
+/gradle-wrapper.jar
+/gradle-wrapper.properties
+
+# Maven
+/target/
