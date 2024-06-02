@@ -29,8 +29,7 @@ public class DeleteBookCommandTest {
 
         deleteBookCommand.execute();
 
-        verify(prompter);
-        verify(library);
+        verify(prompter,library);
 
     }
     @Test
@@ -42,7 +41,6 @@ public class DeleteBookCommandTest {
 
         deleteBookCommand.execute();
 
-        verify(prompter);
-        verify(library);
+        verify(prompter,library);
     }
 }
