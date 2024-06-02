@@ -63,6 +63,18 @@ public class Library {
         return null;
     }
 
+    public List<BookCopy> getBorrowedBookCopies() {
+        List<BookCopy> borrowedCopies = new ArrayList<>();
+        for (Book book : books) {
+            for (BookCopy copy : book.getCopies()) {
+                if (copy.isBorrowed()) {
+                    borrowedCopies.add(copy);
+                }
+            }
+        }
+        return borrowedCopies;
+    }
+
     public List<Book> getBooks() {
         return books;
     }

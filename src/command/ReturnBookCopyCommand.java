@@ -25,6 +25,7 @@ public class ReturnBookCopyCommand implements Command {
             if (customer.returnCopy(copyId)) {
                 BookCopy copy = new BookCopy(library.findBookByISBN(customer.getBorrowedCopies().get(0).getBook().getISBN()));
                 library.findBookByISBN(copy.getBook().getISBN()).addCopy(copy);
+                copy.setBorrowed(false);
                 System.out.println("Book copy returned: " + copyId);
             } else {
                 System.out.println("Copy ID not found: " + copyId);

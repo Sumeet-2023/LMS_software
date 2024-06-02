@@ -26,6 +26,7 @@ public class BorrowBookCopyCommand implements Command {
             Book book = library.findBookByISBN(ISBN);
             if (book != null && !book.getCopies().isEmpty()) {
                 BookCopy copy = book.getCopies().remove(0);
+                copy.setBorrowed(true);
                 customer.borrowCopy(copy);
                 System.out.println("Book copy borrowed: " + copy.getId());
             } else {
