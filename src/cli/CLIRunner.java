@@ -22,6 +22,7 @@ public class CLIRunner {
 
     private void initializeCommands() {
         commandMap = new HashMap<>();
+        commandMap.put(0, new AddBookCommand(prompter, library));
         commandMap.put(1, new ImportBooksCommand(prompter, library));
         commandMap.put(2, new DeleteBookCommand(prompter, library));
         commandMap.put(3, new ImportBookCopiesCommand(prompter, library));
@@ -40,6 +41,7 @@ public class CLIRunner {
 
     public void printOptions() {
         System.out.println("Select a process by entering the index number:");
+        System.out.println("0. Add book");
         System.out.println("1. Import a file with books");
         System.out.println("2. Delete a book");
         System.out.println("3. Import a file with book copies");
