@@ -19,6 +19,7 @@ public class ReportAllBooksCommand implements Command {
             System.out.println("Title: " + book.getTitle() +
                     ", Author: " + book.getAuthor() +
                     ", Genre: " + book.getGenre() +
+                    ", Publisher: " + book.getPublisher() +
                     ", ISBN: " + book.getISBN());
         }
     }
