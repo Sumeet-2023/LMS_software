@@ -94,12 +94,6 @@ public class Library {
                 .orElse(null);
     }
 
-    public Customer findCustomerById(int id) {
-        return customers.stream()
-                .filter(customer -> customer.getCustomerId() == String.valueOf(id))
-                .findFirst()
-                .orElse(null);
-    }
 
     public BookCopy findBookCopyById(int id) {
         for (Book book : books) {

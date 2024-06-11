@@ -26,7 +26,13 @@ public class ImportBookCopiesCommand implements Command {
         String filePath = prompter.getInput();
         try {
             List<String[]> lines = CSVHelper.readCSV(filePath);
+            int i = 1;
             for (String[] line : lines) {
+                if (line.length != 2) {
+                    System.out.println("Invalid Entry at line " + i);
+                    continue;
+                }
+                i++;
                 String ISBN = line[0];
                 String customerIDStr = line[1];
                 Book book = library.findBookByISBN(ISBN);
@@ -35,9 +41,10 @@ public class ImportBookCopiesCommand implements Command {
                     book.addCopy(copy);
                     if (!customerIDStr.isEmpty()) {
                         try {
-                            int customerID = Integer.parseInt(customerIDStr);
+                            String customerID = customerIDStr;
                             Customer customer = library.findCustomerById(customerID);
                             if (customer != null) {
+                                copy.setBorrower(customer);
                                 customer.borrowCopy(copy);
                             } else {
                                 System.out.println("Warning: Customer ID " + customerID + " does not exist. Book copy imported but not borrowed.");

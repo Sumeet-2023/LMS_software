@@ -45,6 +45,7 @@ public class Customer {
     }
 
     public boolean borrowCopy(BookCopy copy) {
+        copy.setBorrowed(true);
        return borrowedCopies.add(copy);
     }
 
