@@ -3,6 +3,7 @@ package command;
 import command.Command;
 import library.Book;
 import library.BookCopy;
+import library.Customer;
 import library.Library;
 import prompt.Prompter;
 import utils.CSVHelper;
@@ -27,10 +28,24 @@ public class ImportBookCopiesCommand implements Command {
             List<String[]> lines = CSVHelper.readCSV(filePath);
             for (String[] line : lines) {
                 String ISBN = line[0];
+                String customerIDStr = line[1];
                 Book book = library.findBookByISBN(ISBN);
                 if (book != null) {
                     BookCopy copy = new BookCopy(book);
                     book.addCopy(copy);
+                    if (!customerIDStr.isEmpty()) {
+                        try {
+                            int customerID = Integer.parseInt(customerIDStr);
+                            Customer customer = library.findCustomerById(customerID);
+                            if (customer != null) {
+                                customer.borrowCopy(copy);
+                            } else {
+                                System.out.println("Warning: Customer ID " + customerID + " does not exist. Book copy imported but not borrowed.");
+                            }
+                        } catch (NumberFormatException e) {
+                            System.out.println("Warning: Invalid customer ID format. Book copy imported but not borrowed.");
+                        }
+                    }
                 }
             }
             System.out.println("Book copies imported successfully.");

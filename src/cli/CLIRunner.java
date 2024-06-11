@@ -37,6 +37,7 @@ public class CLIRunner {
         commandMap.put(12, new ReportNonBorrowedBookCopiesCommand(library));
         commandMap.put(13, new ReportAllCustomersCommand(library));
         commandMap.put(14, new ReportBorrowedBookCopiesByCustomerCommand(prompter, library));
+        commandMap.put(15, new ReportBookCopiesPerPublisherCommand(prompter, library));
     }
 
     public void printOptions() {
@@ -56,13 +57,14 @@ public class CLIRunner {
         System.out.println("12. Report: Output of all non-borrowed book copies");
         System.out.println("13. Report: Output of all customers");
         System.out.println("14. Report: Output of all currently borrowed book copies of a customer");
-        System.out.println("15. Exit");
+        System.out.println("15. Report: Output of all book copies per publisher");
+        System.out.println("16. Exit");
     }
 
     public int run() {
         prompter.displayPrompt("->");
         String input = prompter.getInput().trim();
-        if (input.equals("15"))
+        if (input.equals("16"))
             return (0);
         try {
             int commandNumber = Integer.parseInt(input);

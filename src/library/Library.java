@@ -87,6 +87,33 @@ public class Library {
         return nonBorrowedCopies;
     }
 
+    public Customer findCustomerByEmail(String email) {
+        return customers.stream()
+                .filter(customer -> customer.getEmail().equalsIgnoreCase(email))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Customer findCustomerById(int id) {
+        return customers.stream()
+                .filter(customer -> customer.getCustomerId() == String.valueOf(id))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public BookCopy findBookCopyById(int id) {
+        for (Book book : books) {
+            for (BookCopy copy : book.getCopies()) {
+                if (copy.getId() == id) {
+                    return copy;
+                }
+            }
+        }
+        return null;
+    }
+
+
+
     public List<Book> getBooks() {
         return books;
     }
