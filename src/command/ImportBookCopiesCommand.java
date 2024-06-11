@@ -24,17 +24,20 @@ public class ImportBookCopiesCommand implements Command {
     public void execute() {
         System.out.println("Enter the path to the CSV file with book copies:");
         String filePath = prompter.getInput();
+        int i = 1;
         try {
             List<String[]> lines = CSVHelper.readCSV(filePath);
-            int i = 1;
             for (String[] line : lines) {
-                if (line.length != 2) {
+                if (line.length != 1 || line.length != 2) {
                     System.out.println("Invalid Entry at line " + i);
                     continue;
                 }
                 i++;
+                String customerIDStr = "";
                 String ISBN = line[0];
-                String customerIDStr = line[1];
+                if (line.length == 2) {
+                    customerIDStr = line[1];
+                }
                 Book book = library.findBookByISBN(ISBN);
                 if (book != null) {
                     BookCopy copy = new BookCopy(book);
