@@ -7,10 +7,19 @@ import prompt.Prompter;
 
 import java.util.List;
 
+/**
+ * Command to search for book copies based on criteria (ISBN, Title, Author).
+ */
 public class SearchBookCopiesCommand implements Command {
     private Prompter prompter;
     private Library library;
 
+    /**
+     * Constructs a new SearchBookCopiesCommand.
+     *
+     * @param prompter the prompter to get user input
+     * @param library  the library to search within
+     */
     public SearchBookCopiesCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;

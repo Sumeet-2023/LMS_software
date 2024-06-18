@@ -8,10 +8,19 @@ import utils.CSVHelper;
 import java.io.IOException;
 import java.util.List;
 
-public class ImportBooksCommand implements Command{
+/**
+ * Command to import books into the library from a CSV file.
+ */
+public class ImportBooksCommand implements Command {
     private Prompter prompter;
     private Library library;
 
+    /**
+     * Constructs a new ImportBooksCommand.
+     *
+     * @param prompter the prompter to get user input
+     * @param library  the library to which books will be imported
+     */
     public ImportBooksCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;

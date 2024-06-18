@@ -7,10 +7,19 @@ import prompt.Prompter;
 
 import java.util.List;
 
+/**
+ * Command to report all borrowed book copies by a specific customer.
+ */
 public class ReportBorrowedBookCopiesByCustomerCommand implements Command {
     private Prompter prompter;
     private Library library;
 
+    /**
+     * Constructs a new ReportBorrowedBookCopiesByCustomerCommand.
+     *
+     * @param prompter the prompter to get user input
+     * @param library  the library from which borrowed book copies will be reported
+     */
     public ReportBorrowedBookCopiesByCustomerCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;
@@ -34,4 +43,3 @@ public class ReportBorrowedBookCopiesByCustomerCommand implements Command {
         }
     }
 }
-

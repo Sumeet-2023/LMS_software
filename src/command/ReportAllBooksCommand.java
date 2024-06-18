@@ -5,9 +5,17 @@ import library.Library;
 
 import java.util.List;
 
+/**
+ * Command to report all books in the library.
+ */
 public class ReportAllBooksCommand implements Command {
     private Library library;
 
+    /**
+     * Constructs a new ReportAllBooksCommand.
+     *
+     * @param library the library from which books will be reported
+     */
     public ReportAllBooksCommand(Library library) {
         this.library = library;
     }

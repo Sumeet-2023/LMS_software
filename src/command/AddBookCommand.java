@@ -4,15 +4,27 @@ import library.Book;
 import library.Library;
 import prompt.Prompter;
 
+/**
+ * Command to add a new book to the library.
+ */
 public class AddBookCommand implements Command {
     private final Prompter prompter;
     private final Library library;
 
+    /**
+     * Constructs an AddBookCommand.
+     *
+     * @param prompter the prompter used to get user input
+     * @param library  the library where the book will be added
+     */
     public AddBookCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;
     }
 
+    /**
+     * Executes the command to add a new book to the library.
+     */
     @Override
     public void execute() {
         System.out.print("Enter the title of the book: ");

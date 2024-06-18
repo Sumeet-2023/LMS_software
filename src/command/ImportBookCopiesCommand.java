@@ -11,10 +11,19 @@ import utils.CSVHelper;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Command to import book copies into the library from a CSV file.
+ */
 public class ImportBookCopiesCommand implements Command {
     private Prompter prompter;
     private Library library;
 
+    /**
+     * Constructs a new ImportBookCopiesCommand.
+     *
+     * @param prompter the prompter to get user input
+     * @param library  the library to which book copies will be imported
+     */
     public ImportBookCopiesCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;
@@ -28,7 +37,7 @@ public class ImportBookCopiesCommand implements Command {
         try {
             List<String[]> lines = CSVHelper.readCSV(filePath);
             for (String[] line : lines) {
-                if (line.length != 1 || line.length != 2) {
+                if (line.length != 1 && line.length != 2) {
                     System.out.println("Invalid Entry at line " + i);
                     continue;
                 }

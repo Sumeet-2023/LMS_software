@@ -6,15 +6,27 @@ import library.Customer;
 import library.Library;
 import prompt.Prompter;
 
+/**
+ * Command to borrow a book copy from the library.
+ */
 public class BorrowBookCopyCommand implements Command {
     private Prompter prompter;
     private Library library;
 
+    /**
+     * Constructs a BorrowBookCopyCommand.
+     *
+     * @param prompter the prompter used to get user input
+     * @param library  the library from which the book copy will be borrowed
+     */
     public BorrowBookCopyCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;
     }
 
+    /**
+     * Executes the command to borrow a book copy from the library.
+     */
     @Override
     public void execute() {
         System.out.println("Enter the Id of the customer:");

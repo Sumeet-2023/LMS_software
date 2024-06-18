@@ -5,10 +5,19 @@ import library.Customer;
 import library.Library;
 import prompt.Prompter;
 
+/**
+ * Command to return a borrowed book copy.
+ */
 public class ReturnBookCopyCommand implements Command {
     private Prompter prompter;
     private Library library;
 
+    /**
+     * Constructs a new ReturnBookCopyCommand.
+     *
+     * @param prompter the prompter to get user input
+     * @param library  the library to which the book copy will be returned
+     */
     public ReturnBookCopyCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;
@@ -23,10 +32,11 @@ public class ReturnBookCopyCommand implements Command {
             System.out.println("Enter the copy ID to return:");
             int copyId = Integer.parseInt(prompter.getInput());
             if (customer.returnCopy(copyId)) {
-                BookCopy copy = new BookCopy(library.findBookByISBN(customer.getBorrowedCopies().get(0).getBook().getISBN()));
-                library.findBookByISBN(copy.getBook().getISBN()).addCopy(copy);
-                copy.setBorrowed(false);
-                System.out.println("Book copy returned: " + copyId);
+                BookCopy copy = library.findBookCopyById(copyId);
+                if (copy != null) {
+                    copy.setBorrower(null);
+                    System.out.println("Book copy returned: " + copyId);
+                }
             } else {
                 System.out.println("Copy ID not found: " + copyId);
             }

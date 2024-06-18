@@ -5,9 +5,17 @@ import library.Library;
 
 import java.util.List;
 
+/**
+ * Command to report all borrowed book copies in the library.
+ */
 public class ReportBorrowedBookCopiesCommand implements Command {
     private Library library;
 
+    /**
+     * Constructs a new ReportBorrowedBookCopiesCommand.
+     *
+     * @param library the library from which borrowed book copies will be reported
+     */
     public ReportBorrowedBookCopiesCommand(Library library) {
         this.library = library;
     }

@@ -9,10 +9,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Command to report the number of book copies per publisher in the library.
+ */
 public class ReportBookCopiesPerPublisherCommand implements Command {
     private Prompter prompter;
     private Library library;
 
+    /**
+     * Constructs a new ReportBookCopiesPerPublisherCommand.
+     *
+     * @param prompter the prompter to get user input
+     * @param library  the library from which book copies will be reported
+     */
     public ReportBookCopiesPerPublisherCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;

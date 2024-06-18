@@ -4,15 +4,27 @@ import library.Book;
 import library.Library;
 import prompt.Prompter;
 
+/**
+ * Command to delete a copy of a book from the library.
+ */
 public class DeleteBookCopyCommand implements Command {
     private final Prompter prompter;
     private final Library library;
 
+    /**
+     * Constructs a DeleteBookCopyCommand.
+     *
+     * @param prompter the prompter used to get user input
+     * @param library  the library from which the book copy will be deleted
+     */
     public DeleteBookCopyCommand(Prompter prompter, Library library) {
         this.prompter = prompter;
         this.library = library;
     }
 
+    /**
+     * Executes the command to delete a copy of a book from the library.
+     */
     @Override
     public void execute() {
         System.out.println("Enter the ISBN of the book to delete a copy:");
