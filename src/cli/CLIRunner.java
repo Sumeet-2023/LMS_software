@@ -8,12 +8,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+
+/**
+ * CLIRunner class to handle the command line interface operations.
+ */
 public class CLIRunner {
     private final Prompter prompter;
     private Map<Integer, Command> commandMap;
     private Library library;
 
-    // Constructor
+    /**
+     * Constructor to initialize CLIRunner.
+     */
     public CLIRunner(Scanner scanner, Library library) {
         this.prompter = new Prompter(scanner);
         this.library = library;
@@ -40,6 +46,9 @@ public class CLIRunner {
         commandMap.put(15, new ReportBookCopiesPerPublisherCommand(prompter, library));
     }
 
+    /**
+     * Print the available options to the user.
+     */
     public void printOptions() {
         System.out.println("Select a process by entering the index number:");
         System.out.println("0. Add book");
@@ -61,6 +70,10 @@ public class CLIRunner {
         System.out.println("16. Exit");
     }
 
+    /**
+     * Run the selected command.
+     * @return status code indicating whether to exit (0) or continue (1).
+     */
     public int run() {
         prompter.displayPrompt("->");
         String input = prompter.getInput().trim();

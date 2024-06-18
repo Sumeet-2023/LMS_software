@@ -3,6 +3,9 @@ import library.Library;
 
 import java.util.Scanner;
 
+/**
+ * Main class to run the Library Management System CLI.
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
