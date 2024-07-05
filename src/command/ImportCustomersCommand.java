@@ -32,6 +32,8 @@ public class ImportCustomersCommand implements Command {
         String filePath = prompter.getInput();
         try {
             List<String[]> lines = CSVHelper.readCSV(filePath);
+            if (lines.size() != 3)
+                System.out.println("Invalid number of attributes in the CSV file.");
             for (String[] line : lines) {
                 String ID = line[0];
                 String name = line[1];

@@ -32,6 +32,8 @@ public class ImportBooksCommand implements Command {
         String filePath = prompter.getInput();
         try {
             List<String[]> lines = CSVHelper.readCSV(filePath);
+            if (lines.size() != 5)
+                System.out.println("Incorrect number of values in the CSV file");
             for (String[] line: lines) {
                 String ISBN = line[0];
                 String title = line[1];
